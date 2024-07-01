@@ -1,0 +1,93 @@
+services:
+  db:
+    build:
+      context: ./db
+    environment:
+      # Bitnami/mongo config
+      MONGODB_ROOT_USER: rand_root
+      MONGODB_ROOT_PASSWORD: root_root_password_rand7
+      MONGODB_USERNAME: k_user
+      MONGODB_PASSWORD: alan_was_here_and_say_hello
+      MONGODB_DATABASE: k_events
+      # MONGO_REPLICA_HOST: mongodb://rand_root:root_root_password_rand7@db-replica
+      # MONGO_REPLICA_PORT: 27018
+    volumes:
+      - ./db/data:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - d_net
+  # TODO: fix this mongo replica implementation, required by Prisma for Create transactions
+  # db-replica:
+  #   build:
+  #     context: ./db-replica
+  #   environment:
+  #     # Bitnami/mongo config
+  #     MONGODB_ROOT_USER: rand_root
+  #     MONGODB_ROOT_PASSWORD: root_root_password_rand7
+  #     MONGODB_USERNAME: k_user
+  #     MONGODB_PASSWORD: alan_was_here_and_say_hello
+  #     MONGODB_DATABASE: k_events
+  #   volumes:
+  #     - ./db/data:/data/db
+  #   ports:
+  #     - "27018:27018"
+  #   restart: unless-stopped
+  #   networks:
+  #     - d_net
+  db-seed: 
+    build:
+      context: ./db-seed
+    environment:
+      MONGODB_USERNAME: k_user
+      MONGODB_PASSWORD: alan_was_here_and_say_hello
+      MONGODB_DATABASE: k_events
+    depends_on:
+      - db  
+    networks:
+      - d_net
+    volumes: 
+      - ./db-seed/flags:/flags
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+  api:
+    build:
+      context: ./api
+    ports:
+      - "3000:3000"
+    networks:
+      - d_net
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: mongodb://k_user:alan_was_here_and_say_hello@db:27017/k_events
+  ui:
+    build:
+      context: ./ui
+    ports:
+      - "8080:8080"
+    environment: 
+      API_DOMAIN: http://api:3000
+    networks:
+      - d_net
+    depends_on:
+      - api
+
+networks:
+  d_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.25.0.0/16"
+          gateway: "172.25.0.1"
+
+volumes:
+  db:
+    driver: local
+  db-seed:
+    driver: local

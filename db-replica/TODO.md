@@ -1,0 +1,2 @@
+- need to implement this properly because api requires is due to Prisma
+    - however I have network issues in the config

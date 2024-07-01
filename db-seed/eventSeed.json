@@ -1,0 +1,47 @@
+[
+    {
+      "name": "Drumsheds",
+      "date": "February - April 2024",
+      "description": "A unique space for all, Drumsheds has been reimagined from unused warehouses, breaking from the constraints of traditional spaces, where nothing is fixed. This blank canvas design and state-of-the-art infrastructure hosts a variety of festivals, large-scale entertainment, fashion shows and exhibitions: offering something for every community.",
+      "venue": "Drumsheds",
+      "city": "London",
+      "url":"https://drumshedslondon.com/",
+      "kUrl": "https://CLIENT/event/drumsheds-ss24-tickets",
+      "imgUrl": "https://CLIENT.s3.eu-west-1.amazonaws.com/thumbs/1260%C3%971100%C3%97default/webp/events/2024/02/CLIENT-Drumsheds-Header.webp",
+      "eventId": "drumsheds#london#2024-02-01"
+    },
+    {
+      "name": "EXHALE London",
+      "date": "30th March 2024",
+      "description": "Championing uncompromising rave culture, EXHALE has become one of the most sought-after imprints in electronic music in recent years. Captained by techno's front-runner Amelie Lens, the label takes over our three rooms with a handpicked programme of underground selectors soon to be announced.",
+      "venue": "Drumsheds",
+      "city": "London",
+      "url":"https://drumshedslondon.com/",
+      "kUrl": "https://CLIENT/event/exhale-london-tickets",
+      "imgUrl": "https://CLIENT.s3.eu-west-1.amazonaws.com/thumbs/1260%C3%971100%C3%97default/webp/events/2024/02/CLIENT-Exhale-Header.webp",
+      "eventId": "exhale#london#2024-03-30"
+    },
+    {
+      "name": "False Idols",
+      "date": "13th April 2024",
+      "description": "False Idols returns to DRUMSHEDS for it's second iconic edition. Expect to be elevated and elated on the dance floor as we journey onto the next phase of musical and spiritual hedonism. Enlightenment will be reached with some legendary artists.",
+      "venue": "Drumsheds",
+      "city": "London",
+      "url":"https://drumshedslondon.com/",
+      "kUrl": "https://CLIENT/event/false-idols-tickets",
+      "imgUrl": "https://CLIENT.s3.eu-west-1.amazonaws.com/thumbs/1260%C3%971100%C3%97default/webp/events/2024/02/False-idols-banner.webp",
+      "eventId": "false_idols#london#2024-04-13"
+    },
+    {
+      "name": "Radio 1 Dance",
+      "date": "29th March 2024",
+      "description": "Expert electronic music curators, Radio 1 Dance is the go-to place to discover the latest trends and the most exciting new artists from the UK and beyond. In March, they will host their own show at DRUMSHEDS with three rooms and a genre-bending lineup soon be announced.",
+      "venue": "Drumsheds",
+      "city": "London",
+      "url":"https://drumshedslondon.com/",
+      "kUrl": "https://CLIENT/event/radio-1-dance-tickets",
+      "imgUrl":"https://CLIENT.s3.eu-west-1.amazonaws.com/thumbs/1260%C3%971100%C3%97default/webp/events/2024/02/CLIENT-Radio-1-Header.webp",
+      "eventId": "radio_1_dance#london#2024-03-29"
+    }
+  ]
+  

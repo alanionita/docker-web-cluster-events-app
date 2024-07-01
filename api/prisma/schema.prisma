@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-arm64-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Event {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  date        String
+  description String
+  venue       String?
+  city        String
+  url         String?
+  kUrl        String?
+  imgUrl      String?
+  eventId     String  @unique
+}
+
+model Ticket {
+  id           String  @id @default(auto()) @map("_id") @db.ObjectId
+  name         String
+  type         String
+  price        String
+  fee          String
+  availability Boolean @default(true)
+  amount       Int
+  eventId      String
+}
